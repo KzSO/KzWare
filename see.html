@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Discord Profile</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      cursor: url('https://emojicombos.com/images/emojis/skull.png'), auto;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+    
+    #discord-widget {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #discord-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    #rain-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .raindrop {
+      position: absolute;
+      width: 2px;
+      height: 10px;
+      background-color: white;
+      animation: rain 1s infinite linear;
+    }
+    
+    @keyframes rain {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+    }
+
+    #text-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "Courier New", monospace;
+      font-size: 24px;
+      color: white;
+      white-space: nowrap;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    }, false);
+  </script>
+</head>
+<body>
+  <audio src="https://soundcloud.com/glodenboy/kyle-richh-wtf-buggin-out" autoplay loop></audio>
+  <div id="discord-widget">
+    <a href="https://discord.gg/5A27QYNR" target="_blank">
+      <img src="https://discord.c99.nl/widget/theme-5/865330269997367357.png" alt="Discord Widget">
+    </a>
+    <div id="discord-logo">
+      <a href="https://discord.gg/5A27QYNR" target="_blank">
+        <img src="https://d11d9oqz0intmj.cloudfront.net/CISVUchefpsmybE.png" alt="Discord Logo" width="32" height="32">
+      </a>
+    </div>
+  </div>
+  <div id="rain-container">
+    <!-- Raindrop elements will be dynamically added here -->
+  </div>
+  <div id="text-container">
+    KzWare Dont Overwrite&lt;3
+  </div>
+
+  <script>
+    function createRaindrops() {
+      const rainContainer = document.getElementById('rain-container');
+      const numRaindrops = 100;
+
+      for (let i = 0; i < numRaindrops; i++) {
+        const raindrop = document.createElement('div');
+        raindrop.classList.add('raindrop');
+        raindrop.style.left = Math.random() * 100 + '%';
+        raindrop.style.animationDelay = Math.random() + 's';
+        rainContainer.appendChild(raindrop);
+      }
+    }
+
+    createRaindrops();
+
+  </script>
+</body>
+</html>
